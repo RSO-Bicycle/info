@@ -7,17 +7,6 @@ import (
 	"os"
 )
 
-/*
-{
-    "clani": ["jm1234", "mn3322"],
-    "opis_projekta": "Nas projekt implementira aplikacijo za oddajo nepremicnin.",
-    "mikrostoritve": ["http://35.189.96.118:8081/v1/orders", "http://35.197.209.159:8080/v1/customers/"],
-    "github": ["https://github.com/jmezna/rso-customers", "https://github.com/jmezna/rso-orders"],
-    "travis": ["https://travis-ci.org/jmezna/rso-customers", "https://travis-ci.org/jmezna/rso-orders"],
-    "dockerhub": ["https://hub.docker.com/r/jmezna/rso-customers/", "https://hub.docker.com/r/jmezna/rso-orders/"]
-}
-*/
-
 type infoResponse struct {
 	Clani         []string `json:"clani"`
 	OpisProjekta  string   `json:"opis_projekta"`
@@ -35,13 +24,13 @@ func main() {
 			"",
 		},
 		GitHub: []string{
-
+			"https://github.com/RSO-Bicycle/users",
 		},
 		Travis: []string{
-
+			"https://travis-ci.org/RSO-Bicycle/users",
 		},
 		DockerHub: []string{
-
+			"https://console.cloud.google.com/gcr/images/rso-bicycle/EU/users?project=rso-bicycle",
 		},
 	}
 	s, _ := json.Marshal(inf)
@@ -53,7 +42,7 @@ func main() {
 	})
 
 	host := stringOrDefault("0.0.0.0", "SERVER_HOST")
-	port := stringOrDefault("80", "SERVER_PORT")
+	port := stringOrDefault("8080", "SERVER_PORT")
 	if err := http.ListenAndServe(host+":"+port, nil); err != nil {
 		fmt.Printf("Error: %s\n", err.Error())
 	}

@@ -1,5 +1,3 @@
 FROM scratch
-
-COPY main /opt/main
-
-CMD ["/opt/main"]
+ADD main /
+CMD ["/main"]

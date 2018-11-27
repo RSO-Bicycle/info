@@ -21,16 +21,20 @@ func main() {
 		Clani:        []string{"zk6063", "uh8243"},
 		OpisProjekta: "Najin projekt implementira aplikacijo za izposojo koles",
 		Mikrostoritve: []string{
-			"",
+			"http://api.bicycle.hercog.si/users",
+			"http://api.bicycle.hercog.si/billing",
 		},
 		GitHub: []string{
 			"https://github.com/RSO-Bicycle/users",
+			"https://github.com/RSO-Bicycle/billing",
 		},
 		Travis: []string{
 			"https://travis-ci.org/RSO-Bicycle/users",
+			"https://travis-ci.org/RSO-Bicycle/billing",
 		},
 		DockerHub: []string{
 			"https://console.cloud.google.com/gcr/images/rso-bicycle/EU/users?project=rso-bicycle",
+			"https://console.cloud.google.com/gcr/images/rso-bicycle/EU/billing?project=rso-bicycle",
 		},
 	}
 	s, _ := json.Marshal(inf)

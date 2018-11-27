@@ -1,6 +1,5 @@
-FROM alpine
-RUN mkdir -p /opt/app
-WORKDIR /opt/app
-ADD ./main /opt/app
+FROM scratch
 
-CMD ["/opt/app/main"]
+COPY main /opt/main
+
+CMD ["/opt/main"]
